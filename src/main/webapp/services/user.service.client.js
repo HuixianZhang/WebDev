@@ -24,7 +24,15 @@ function AdminUserServiceClient() {
         return fetch(self.url)
             .then(response => response.json())
     }
-    function findUserById(userId) {  }
+    function findUserById(userId) {
+        return fetch(`${self.url}/${userid}`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        }).then(response => response.json())
+    }
 
     function updateUser(userid, user) {
         return fetch(`${self.url}/${userid}`, {

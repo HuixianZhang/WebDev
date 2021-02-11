@@ -76,7 +76,7 @@
 
         var selectedUser = null
         $(".huixian-select-btn").click(function (event) {
-            var id = $(event.target).attr("id")
+            const id = $(event.target).attr("id")
             console.log("userid",id)
             selectedUser = users.find(user => user._id === id)
             $usernamefl.val(selectedUser.username)
@@ -131,6 +131,8 @@
 
     updateBtn.click(function(selectedUser){
         // console.log("userid",id)
+        console.log(selectedUser)
+        const id = $(event.selectedUser).attr("id")
         console.log(id)
         selectedUser.username = $usernamefl.val()
         selectedUser.firstName = $firstnamefl.val()
